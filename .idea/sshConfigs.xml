@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="SshConfigs">
+    <configs>
+      <sshConfig authType="PASSWORD" host="webte1.fei.stuba.sk" id="5127ec7e-be72-47da-8b18-ca1d2c06f03c" port="22" nameFormat="DESCRIPTIVE" username="xdorosh" useOpenSSHConfig="true" />
+    </configs>
+  </component>
+</project>

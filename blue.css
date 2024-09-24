@@ -1,0 +1,238 @@
+/* Reset margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #6889b5, #7699d8); /* Gradient background */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    justify-content: center;
+    padding-top: 80px;
+}
+
+.header {
+    width: 100%; /* Full width on phone */
+    background: linear-gradient(135deg, #4facfe, #00f2fe); /* Gradient */
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 0px 0px 25px 25px; /* Bottom corners */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1); /* Reduced shadow */
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+}
+
+/* Buttons */
+.nav-button-link {
+    background: linear-gradient(135deg, #5d54a4, #a8c0ff); /* Gradient */
+    color: white;
+    padding: 10px 15px; /* Smaller padding for phones */
+    border-radius: 20px;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.nav-button-link:hover {
+    transform: translateY(-4px);
+    background: linear-gradient(135deg, #3a3d99, #c3cfe2); /* Updated hover gradient */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); /* Hover shadow */
+}
+
+/* Content Box */
+.content-box {
+    width: 100%; /* Full width on phone */
+    background: rgba(255, 255, 255, 0.9); /* Transparent white */
+    backdrop-filter: blur(10px); /* Glass effect */
+    border: none;
+    padding: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15); /* Lighter shadow */
+    border-radius: 20px;
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column; /* Stacking content on phone */
+    gap: 10px; /* Space between elements */
+}
+
+/* Title (Red Box) */
+.title {
+    padding: 15px;
+    font-size: 20px; /* Smaller text */
+    font-weight: bold;
+    text-align: center;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b); /* Gradient */
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Image (Blue Box) */
+.image-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(70, 130, 180, 0.2); /* Soft blue background */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.image-box img {
+    max-width: 100%; /* Make sure image scales on small screens */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Fullscreen Image Box */
+.image-box.full {
+    height: 100vh; /* 100% of the viewport height */
+    width: 100vw;  /* 100% of the viewport width */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Ensures the image won't spill over the container */
+    position: relative;
+    margin-top: 60px; /* Adjust for the header height */
+}
+
+.image-box img:hover {
+    transform: scale(1.05); /* Hover zoom */
+}
+
+/* Text (Green Box) */
+.text-box {
+    background: #e3fdfd;
+    padding: 15px;
+    font-size: 16px; /* Adjusted text size */
+    line-height: 1.6; /* Smaller line height */
+    color: #34495e;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Phrase (Pink Box) */
+.phrase-box {
+    padding: 15px;
+    text-align: center;
+    background: linear-gradient(135deg, #ff9a9e, #fecfef); /* Gradient */
+    color: #2c3e50;
+    font-size: 18px; /* Adjusted size */
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.schedule-day {
+    margin-bottom: 20px;
+}
+
+.day-title {
+    font-size: 1.5em;
+    background-color: #b6e1b6;
+    padding: 10px;
+}
+
+.time-slot {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-top: 5px;
+}
+.time-slot:nth-child(even) {
+    background-color: #e7f4e4;
+}
+
+.time-slot .time {
+    font-weight: bold;
+}
+
+
+
+/* Responsive design for larger devices */
+@media (min-width: 768px) {
+    .header {
+        width: 60%; /* Width for tablets and above */
+        padding: 20px;
+    }
+
+    .content-box {
+        width: 80%; /* Increase width */
+        display: grid; /* Revert to grid layout */
+        grid-template-columns: 1fr 2fr;
+        grid-template-rows: auto auto;
+        grid-gap: 20px;
+    }
+
+    .title {
+        grid-column: span 2;
+        font-size: 26px; /* Larger font */
+    }
+
+    .text-box {
+        font-size: 12px;
+    }
+    .text-box.add{
+        font-size: 20px;
+        background-color: #e2e5ec;
+    }
+
+    .phrase-box {
+        font-size: 20px;
+    }
+
+    .nav-button-link {
+        padding: 15px 25px;
+        font-size: 16px;
+    }
+    /* Text Box (For content) */
+    .text-box {
+        background: #f0f9ff;
+        padding: 20px;
+        font-size: 20px;
+        line-height: 1.6;
+        color: #34495e;
+        border-radius: 10px;
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .text-box h2, .text-box h3 {
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #2c3e50;
+    }
+
+    .text-box p, .text-box ul, .text-box ol {
+        margin-bottom: 10px;
+    }
+
+    .text-box ul, .text-box ol {
+        padding-left: 40px;  /* Adjust the left padding to move the points/numbers to the right */
+    }
+
+    .text-box li {
+        margin-bottom: 5px;
+    }
+
+    /* Styling for the unordered and ordered lists */
+    .language-list, .programming-list {
+        list-style-position: inside; /* Ensures bullets/numbers stay inside the container */
+        padding-left: 40px; /* Add padding to move the bullet points/numbers to the right */
+    }
+
+    .language-list li, .programming-list li {
+        margin-bottom: 5px;
+    }
+
+}
