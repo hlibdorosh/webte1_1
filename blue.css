@@ -159,6 +159,147 @@ body {
 }
 
 
+/* Existing CSS remains unchanged */
+
+/* Schedule Table */
+.schedule-table {
+    margin-top: 20px;
+    width: 100%;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+}
+
+td.green {
+    background-color: #b6e1b6;
+    font-weight: bold;
+}
+
+.time-slot {
+    background-color: #f9f9f9;
+    padding: 10px;
+    margin-top: 5px;
+}
+
+.time-slot.green {
+    background-color: #b6e1b6;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Responsive Table on Small Devices */
+@media (max-width: 768px) {
+    .schedule-table {
+        overflow-x: auto;
+    }
+
+    table, thead, tbody, th, td, tr {
+        display: block; /* Makes the table rows behave like block elements */
+    }
+
+    /* Hide the header row in small screens */
+    thead tr {
+        display: none;
+    }
+
+    td {
+        /* For each cell, stack items with labels on the left */
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+        border: none; /* Removes borders for small screens */
+        border-bottom: 1px solid #ddd;
+    }
+
+    td::before {
+        /* Add labels before each cell on small screens */
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        width: 45%; /* Adjust label width */
+        padding-right: 10px;
+        white-space: nowrap;
+        content: attr(data-label); /* Displays data-label attribute content */
+        font-weight: bold;
+    }
+
+    td.green {
+        background-color: #b6e1b6;
+    }
+
+    /* Makes sure the last row has no border at the bottom */
+    tbody tr:last-child td {
+        border-bottom: none;
+    }
+}
+
+/* Custom data-label attributes for each table cell */
+@media (max-width: 768px) {
+    td[data-label] {
+        display: block;
+    }
+
+    td[data-label="Day"]::before {
+        content: "Day";
+    }
+
+    td[data-label="8.00-8.50"]::before {
+        content: "8.00-8.50";
+    }
+
+    td[data-label="9.00-9.50"]::before {
+        content: "9.00-9.50";
+    }
+
+    td[data-label="10.00-10.50"]::before {
+        content: "10.00-10.50";
+    }
+
+    td[data-label="11.00-11.50"]::before {
+        content: "11.00-11.50";
+    }
+
+    td[data-label="12.00-12.50"]::before {
+        content: "12.00-12.50";
+    }
+
+    td[data-label="13.00-13.50"]::before {
+        content: "13.00-13.50";
+    }
+
+    td[data-label="14.00-14.50"]::before {
+        content: "14.00-14.50";
+    }
+
+    td[data-label="15.00-15.50"]::before {
+        content: "15.00-15.50";
+    }
+
+    td[data-label="16.00-16.50"]::before {
+        content: "16.00-16.50";
+    }
+
+    td[data-label="17.00-17.50"]::before {
+        content: "17.00-17.50";
+    }
+}
+
 
 /* Responsive design for larger devices */
 @media (min-width: 768px) {
