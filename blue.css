@@ -88,6 +88,19 @@ body {
     border-radius: 10px;
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
 }
+.big-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(70, 130, 180, 0.2); /* Soft blue background */
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    max-width: 100%; /* Make sure image scales on small screens */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
 
 .image-box img {
     max-width: 100%; /* Make sure image scales on small screens */
@@ -95,18 +108,13 @@ body {
     border-radius: 10px;
     transition: transform 0.3s ease;
 }
-
-/* Fullscreen Image Box */
-.image-box.full {
-    height: 100vh; /* 100% of the viewport height */
-    width: 100vw;  /* 100% of the viewport width */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden; /* Ensures the image won't spill over the container */
-    position: relative;
-    margin-top: 60px; /* Adjust for the header height */
+.big-box img {
+    max-width: 100%; /* Make sure image scales on small screens */
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
 }
+
 
 .image-box img:hover {
     transform: scale(1.05); /* Hover zoom */
@@ -157,6 +165,8 @@ body {
 .time-slot .time {
     font-weight: bold;
 }
+
+
 
 
 
